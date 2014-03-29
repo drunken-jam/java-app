@@ -6,11 +6,35 @@ import model.Game;
 
 public class Executor {
 
+	private static final Integer FIRST_INTEGER = 1;
+	private static final Integer LAST_INTEGER = 8;
+
+	private Integer lastGame = 0;
+
 	private static final HashMap<Integer, String> gameIndex;
 	static {
 		gameIndex = new HashMap<Integer, String>();
-		gameIndex.put(1, "one");
-		gameIndex.put(2, "two");
+		gameIndex.put(1, "pares");
+		gameIndex.put(2, "nones");
+		gameIndex.put(3, "todos");
+		gameIndex.put(4, "nariz");
+		gameIndex.put(5, "chiste");
+		gameIndex.put(6, "mariposa");
+		gameIndex.put(7, "factorX");
+		gameIndex.put(8, "hidalgo");
+	}
+
+	private static final HashMap<Integer, Double> gameFrecuency;
+	static {
+		gameFrecuency = new HashMap<Integer, Double>();
+		gameFrecuency.put(1, 1.0);
+		gameFrecuency.put(2, 1.0);
+		gameFrecuency.put(3, 1.0);
+		gameFrecuency.put(4, 1.0);
+		gameFrecuency.put(5, 0.6);
+		gameFrecuency.put(6, 1.0);
+		gameFrecuency.put(7, 1.0);
+		gameFrecuency.put(8, 0.2);
 	}
 
 	public Game giveMeGame() {
@@ -18,8 +42,28 @@ public class Executor {
 		return new Game(audio);
 	}
 
-	private static Integer nextGame() {
-		return nextGame(1, 2);
+	private Integer nextGame() {
+		boolean found = false;
+		Integer i = null;
+		while (!found) {
+			i = nextGame(FIRST_INTEGER, LAST_INTEGER);
+			if (isValid(i)) {
+				found = true;
+			}
+		}
+		lastGame = i;
+		return i;
+	}
+
+	private boolean isValid(Integer i) {
+		double random = Math.random();
+		double frec = gameFrecuency.get(i);
+		if (random <= frec) {
+			if (!i.equals(lastGame)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	// stackoverflow: 363681
