@@ -2,6 +2,10 @@
 public class Drunken {
 
 	static Chronos chrono;
-	static Executor executor;
 	
+	public static void main(String[] args){
+		chrono = new Chronos(2);
+		chrono.ponerAlarma();
+		
+	}
 }
