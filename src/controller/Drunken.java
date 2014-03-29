@@ -1,5 +1,6 @@
 package controller;
 
+import reproductor.Musica;
 import model.Game;
 import view.MainView;
 
@@ -16,8 +17,8 @@ public class Drunken {
 	}
 
 	public static void main(String[] args) {
-		Drunken controller = new Drunken();
-		controller.start();
+		//new Drunken().start();
+		new Musica().startMusica("FearNotThisNight");
 	}
 
 	public void start() {

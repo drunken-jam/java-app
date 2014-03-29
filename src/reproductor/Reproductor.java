@@ -6,11 +6,14 @@ import java.io.FileNotFoundException;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
-
+/**
+ * Reproductor
+ * @author MurielPiojo
+ *
+ */
 public class Reproductor extends Thread{
 
-	//FearNotThisNight.mp3 es el Default
-	private String ficheroMusica = "FearNotThisNight.mp3";
+	private String ficheroMusica = "./assets/audio/FearNotThisNight.mp3";
 	
     public void run(){
     	
@@ -37,6 +40,6 @@ public class Reproductor extends Thread{
     
     public void setURLFicheroMusica(String direccion){
     	
-    	this.ficheroMusica = direccion;
+    	this.ficheroMusica = "./assets/audio/"+direccion+".mp3";
     }
 }

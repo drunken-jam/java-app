@@ -2,7 +2,7 @@ package reproductor;
 
 /**
  * Ejecucion de la musica
- * @author Deekin III
+ * @author MurielPiojo
  *
  */
 public class Musica {
@@ -14,18 +14,19 @@ public class Musica {
      * Hace un set del fichero de musica default
      * @param direccion
      */
-    private void setURLFichero(String direccion){
+    @SuppressWarnings("unused")
+	private void setURLFichero(String direccion){
     	
     	thread.setURLFicheroMusica(direccion);
     }
     
     /**
-     * Ejecuta el fichero de musica mp3 localizado en la direccion introducida
-     * @param direccion
+     * Ejecuta el fichero de musica mp3 localizado en ID
+     * @param ID
      */
-    public void startMusica(String direccion) {
+    public void startMusica(String ID) {
     	
-    	thread.setURLFicheroMusica(direccion);
+    	thread.setURLFicheroMusica(ID);
 
         //Crea el THREAD del reproductor
         thread.start();
