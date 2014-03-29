@@ -1,3 +1,4 @@
+package controller;
 import java.util.HashMap;
 import java.util.Random;
 import model.Game;
