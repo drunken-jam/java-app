@@ -53,5 +53,10 @@ public class Chronos {
 		ponerAlarmaEnd();
 		ponerAlarmaGames();
 	}
+	
+	public void stop(){
+		gameTimer.cancel();
+		endTimer.cancel();
+	}
 
 }

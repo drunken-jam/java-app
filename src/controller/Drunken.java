@@ -25,6 +25,10 @@ public class Drunken {
 		view = new MainView(this);
 	}
 
+	public void stop(){
+		chrono.stop();
+	}
+	
 	public void gameEvent(Game game) {
 		view.setGameOnScreen(game.getAudio());
 		view.disable();
