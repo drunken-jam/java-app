@@ -11,6 +11,7 @@ import controller.Drunken;
 
 public class MainView extends JFrame {
 
+	private static final String initial = "Ready for action";
 	private static final long serialVersionUID = 1L;
 	private static final int FRAME_WEIGHT = 600;
 	private static final int FRAME_HEIGHT = 480;
@@ -45,7 +46,7 @@ public class MainView extends JFrame {
 			}
 		});
 
-		currentGame = new JLabel("Ready for action");
+		currentGame = new JLabel(initial);
 
 		mainPanel.add(startButton);
 		mainPanel.add(currentGame);
@@ -55,9 +56,22 @@ public class MainView extends JFrame {
 	public void setGameOnScreen(String text) {
 		this.currentGame.setText(text);
 	}
+	
+	public void disable(){
+		startButton.setEnabled(false);
+	}
+	
+	public void enable(){
+		startButton.setEnabled(true);
+	}
+	
+	public void putInitial(){
+		currentGame.setText(initial);
+	}
 
 	private void start() {
 		drunken.go();
+		this.repaint();
 	}
 
 }
