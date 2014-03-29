@@ -17,8 +17,7 @@ public class Drunken {
 	}
 
 	public static void main(String[] args) {
-		//new Drunken().start();
-		new Musica().startMusica("FearNotThisNight");
+		new Drunken().start();
 	}
 
 	public void start() {
