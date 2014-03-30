@@ -29,6 +29,7 @@ public class Drunken {
 
 	public void stop(){
 		chrono.stop();
+		view.enable();
 	}
 
 	public void gameEvent(Game game) {
