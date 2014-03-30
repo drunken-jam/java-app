@@ -19,6 +19,7 @@ public class MainView extends JFrame {
 	protected Drunken drunken;
 	private JPanel mainPanel;
 	private JButton startButton;
+	private JButton stopButton;
 	private JLabel currentGame;
 
 	public MainView(Drunken drunken) {
@@ -40,15 +41,22 @@ public class MainView extends JFrame {
 		startButton = new JButton("Start");
 
 		startButton.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				start();
+			}
+		});
+		
+		stopButton = new JButton("Stop");
+		stopButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stop();
 			}
 		});
 
 		currentGame = new JLabel(initial);
 
 		mainPanel.add(startButton);
+		mainPanel.add(stopButton);
 		mainPanel.add(currentGame);
 		return mainPanel;
 	}
@@ -71,7 +79,12 @@ public class MainView extends JFrame {
 
 	private void start() {
 		drunken.go();
-		this.repaint();
+		this.currentGame.setText("Jugando");
+	}
+	
+	private void stop() {
+		drunken.stop();
+		putInitial();
 	}
 
 }
