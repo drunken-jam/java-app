@@ -6,7 +6,7 @@ import view.MainView;
 
 
 public class Drunken {
-	private static final long INITIAL_SECONDS = 20;
+	private static final long INITIAL_SECONDS = 60;
 	private static final long INITIAL_MINUTES = 90;
 	private Chronos chrono;
 	private MainView view;
