@@ -22,7 +22,8 @@ public class Chronos {
 		this.controller = controller;
 	}
 
-	private class GameTask extends TimerTask{
+	private class GameTask extends TimerTask {
+		@Override
 		public void run(){
 			Game game = ejecutor.giveMeGame();
 			System.out.println(game.getAudio());
@@ -31,8 +32,9 @@ public class Chronos {
 			ponerAlarmaGames();
 		}
 	}
-	
+
 	private class EndTask extends TimerTask{
+		@Override
 		public void run(){
 			gameTimer.cancel();
 			controller.endEvent();
@@ -43,7 +45,7 @@ public class Chronos {
 		gameTimer = new Timer();
 		gameTimer.schedule(new GameTask(), period*SECONDS);
 	}
-	
+
 	public void ponerAlarmaEnd(){
 		endTimer = new Timer();
 		endTimer.schedule(new EndTask(), duration*SECONDS*MINUTES);
@@ -53,7 +55,7 @@ public class Chronos {
 		ponerAlarmaEnd();
 		ponerAlarmaGames();
 	}
-	
+
 	public void stop(){
 		gameTimer.cancel();
 		endTimer.cancel();

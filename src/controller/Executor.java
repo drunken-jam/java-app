@@ -18,10 +18,11 @@ public class Executor {
 		gameIndex.put(2, "nones");
 		gameIndex.put(3, "todos");
 		gameIndex.put(4, "nariz");
-		gameIndex.put(5, "chiste");
-		gameIndex.put(6, "mariposa");
-		gameIndex.put(7, "factorX");
-		gameIndex.put(8, "hidalgo");
+		gameIndex.put(5, "uno");
+		gameIndex.put(6, "dos");
+		gameIndex.put(7, "tres");
+		gameIndex.put(8, "factorX");
+		gameIndex.put(9, "hidalgo");
 	}
 
 	private static final HashMap<Integer, Double> gameFrecuency;
@@ -31,9 +32,9 @@ public class Executor {
 		gameFrecuency.put(2, 1.0);
 		gameFrecuency.put(3, 1.0);
 		gameFrecuency.put(4, 1.0);
-		gameFrecuency.put(5, 0.6);
-		gameFrecuency.put(6, 1.0);
-		gameFrecuency.put(7, 1.0);
+		gameFrecuency.put(5, 0.5);
+		gameFrecuency.put(6, 0.5);
+		gameFrecuency.put(7, 0.5);
 		gameFrecuency.put(8, 0.2);
 	}
 

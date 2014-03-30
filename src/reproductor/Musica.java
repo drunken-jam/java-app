@@ -6,30 +6,32 @@ package reproductor;
  *
  */
 public class Musica {
-	
-    private Reproductor thread = new Reproductor();
-    
 
-    /**
-     * Hace un set del fichero de musica default
-     * @param direccion
-     */
-    @SuppressWarnings("unused")
+	private Reproductor thread = new Reproductor();
+
+
+	/**
+	 * Hace un set del fichero de musica default
+	 * @param direccion
+	 */
+	@SuppressWarnings("unused")
 	private void setURLFichero(String direccion){
-    	
-    	thread.setURLFicheroMusica(direccion);
-    }
-    
-    /**
-     * Ejecuta el fichero de musica mp3 localizado en ID
-     * @param ID
-     */
-    public void startMusica(String ID) {
-    	
-    	thread.setURLFicheroMusica(ID);
 
-        //Crea el THREAD del reproductor
-        thread.start();
+		thread.setURLFicheroMusica(direccion);
+	}
 
-    }
+	/**
+	 * Ejecuta el fichero de musica mp3 localizado en ID
+	 * @param ID
+	 */
+	public void startMusica(String ID) {
+
+		thread = new Reproductor();
+		thread.setURLFicheroMusica(ID);
+
+		//Crea el THREAD del reproductor
+
+		thread.start();
+
+	}
 }
